@@ -6,13 +6,15 @@ const priceInput = document.getElementById("price-input");
 const addItem = document.getElementById("add-item")
 const shoppingList = document.getElementById("shopping-list");
 const clearListBtn = document.getElementById("clear-list")
+const msg = document.getElementById("message")
+
 
 function showItemInput(product) {
     const li = document.createElement("li");
     li.textContent = product.item + " - $"+ product.price;
 
     li.addEventListener("click", () =>{
-        li.style.textDecoration =li.style.textDecoration === "line-through" ? "none" : "line-through";
+        li.style.textDecoration = "line-through";
     });
     
     shoppingList.appendChild(li);
@@ -28,7 +30,12 @@ addItem.addEventListener("click", function(){
     const item = itemInput.value.trim();
     const price = priceInput.value.trim();
 
-    if(item === "" || price === "") return;
+    if(item === "" || price === ""){
+        msg.textContent = "Please input item and price! ";
+        return;
+    }
+    msg.textContent = "";
+
 
     const product = {
         item: item,
