@@ -10,6 +10,11 @@ const clearListBtn = document.getElementById("clear-list")
 function showItemInput(product) {
     const li = document.createElement("li");
     li.textContent = product.item + " - $"+ product.price;
+
+    li.addEventListener("click", () =>{
+        li.style.textDecoration =li.style.textDecoration === "line-through" ? "none" : "line-through";
+    });
+    
     shoppingList.appendChild(li);
 }
 function renderList(){
@@ -18,9 +23,10 @@ function renderList(){
         showItemInput(shoppingCart[i]);
     }
 }
+
 addItem.addEventListener("click", function(){
-    const item = itemInput.value;
-    const price = priceInput.value;
+    const item = itemInput.value.trim();
+    const price = priceInput.value.trim();
 
     if(item === "" || price === "") return;
 
@@ -29,7 +35,7 @@ addItem.addEventListener("click", function(){
         price: price
     };
 
-    shoppingCart.push(product)
+    shoppingCart.push(product);
 
     localStorage.setItem('cart', JSON.stringify(shoppingCart));
 
@@ -39,10 +45,10 @@ addItem.addEventListener("click", function(){
 
 });
 
-clearListBtn.addEventListener("click", () => {
-    shoppingList = [];
+clearListBtn.addEventListener("click", function() {
+    shoppingCart = [];
     localStorage.removeItem("cart");
-    renderList();
+    shoppingList.innerHTML = "";
 });
 
 const savedItems = localStorage.getItem('cart');
@@ -51,4 +57,3 @@ if(savedItems){
     renderList();
 }
 
-alert("Niaje Msupa")

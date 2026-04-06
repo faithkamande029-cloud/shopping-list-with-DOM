@@ -1,5 +1,6 @@
 # An inerative shopping list
 
-It create a list of items along with their price. You can the item when the purchase is made
+The program an ineractive shopping list. Clients list items with price.And can cancel purchase items.
+
 ## How it works 
 Clients input items they are then added to a list and canceled out when purchase is made.

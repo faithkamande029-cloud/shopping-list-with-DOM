@@ -21,7 +21,7 @@ h1 {
     font-size: x-large;
     color: black;
     display: flex;
-    align-items: center;       
+    align-items: center;      
 }
 input{
     border: 3px solid,rgb(130, 95, 128);
@@ -30,8 +30,7 @@ input{
     text-align: center;
     font-size: x-large;
     margin-right: 10px;
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;  
 }
 
 button{
@@ -41,16 +40,18 @@ button{
     width: 80px;
     border-radius: 20%; 
     font-size: medium;   
-    color: white;
-    
-}
-button a:hover {
-    background-color: rgb(201, 30, 58);
-}
-.listing{
-    padding: 100px;
+    color: white;  
 }
 
-.underline {
-    color: blueviolet;
+
+li{
+    list-style-type: none;
+    background-color: rgb(243, 188, 213); 
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    font-weight: bold;
+    border: 2px solid;
+    margin: 10px; 
 }
